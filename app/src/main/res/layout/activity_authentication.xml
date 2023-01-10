@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="220dp"
         android:background="@color/color20"
-        android:src="@drawable/HYDE_HorizontalCUT3"
+        android:src="@drawable/hyde3"
         android:scaleType="fitCenter"
         android:contentDescription="@string/logo_of_the_app"
         />

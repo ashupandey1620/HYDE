@@ -83,7 +83,6 @@ class Login : Fragment() {
         }
 
         googleButton.setOnClickListener{
-
             createRequest()
         }
 
@@ -108,7 +107,7 @@ class Login : Fragment() {
 
     private fun createRequest() {
         googleSignInOption = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-            .requestIdToken("Google ID")
+            .requestIdToken("356779770347-hhlrt2l2igagc9cr5n5n8p0meekib925.apps.googleusercontent.com")
             .requestEmail()
             .build()
     }
