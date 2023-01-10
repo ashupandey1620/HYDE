@@ -1,59 +1,116 @@
 package com.ashu.hyd
 
+import android.annotation.SuppressLint
 import android.os.Bundle
+import android.provider.ContactsContract.CommonDataKinds.Email
+import android.text.TextUtils
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ProgressBar
+import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [SignUp.newInstance] factory method to
- * create an instance of this fragment.
- */
 class SignUp : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var progressBar : ProgressBar
+    private lateinit var enterEmail: TextInputEditText
+    private lateinit var enterPassword : TextInputEditText
+    private lateinit var confirmPassword :TextInputEditText
+    private lateinit var signUpButton : Button
 
+
+
+    private lateinit var fAuth : FirebaseAuth
+    private lateinit var fStore : FirebaseFirestore
+    private lateinit var dB : DocumentReference
+
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_sign_up , container , false)
-    }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment SignUp.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String , param2: String) =
-            SignUp().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1 , param1)
-                    putString(ARG_PARAM2 , param2)
+        val view = inflater.inflate(R.layout.fragment_sign_up , container , false)
+        enterEmail = view.findViewById(R.id.eSignUpEmail)
+        enterPassword = view.findViewById(R.id.eSignUpPassword)
+        confirmPassword = view.findViewById(R.id.eSignUpConfirmPassword)
+        progressBar = view.findViewById(R.id.signUpProgressBar)
+
+
+        signUpButton = view.findViewById(R.id.SignUpButton)
+
+        signUpButton.setOnClickListener(){
+            val email = enterEmail.text.toString()
+            val password = enterPassword.text.toString()
+            val confirmPasswordVar = confirmPassword.text.toString()
+
+            if(TextUtils.isEmpty(email)){
+                enterEmail.error = "Email is Required to Create an Account"
+            }
+            else if (TextUtils.isEmpty(password))
+            {
+                enterPassword.error = "Password is Required"
+            }
+            else
+            {
+                if(password.length<5)
+                {
+                    enterPassword.error = "Password must be greater than 5 characters"
+                }
+                else
+                {
+                    if (password != confirmPasswordVar)
+                    {
+                        confirmPassword.error = "Passwords Not Matched"
+                    }
+                    else
+                    {
+                        progressBar.visibility = View.VISIBLE
+                        createAccount(email,password)
+                    }
                 }
             }
+
+        }
+        fAuth = FirebaseAuth.getInstance()
+        fStore = FirebaseFirestore.getInstance()
+
+
+        return view
     }
+
+    private fun createAccount(Em : String ,Ps :String){
+
+        fAuth.createUserWithEmailAndPassword(Em,Ps).addOnCompleteListener{task->
+            if(task.isSuccessful)
+            {
+                val userInfo = fAuth.currentUser?.uid
+                dB = fStore.collection("users").document(userInfo.toString())
+                val obj = mutableMapOf<String,String>()
+                obj["userEmail"] = Em
+                obj["userPassword"] = Ps
+
+                dB.set(obj).addOnSuccessListener {
+                    Log.d("onSuccess" , "User Created Successfully")
+                    progressBar.visibility = View.GONE
+                }
+
+
+            }
+
+        }
+
+    }
+
+
+
+
 }

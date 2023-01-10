@@ -1,14 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Login">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       >
 
-</FrameLayout>
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:id="@+id/loginEmail"
+               android:layout_height="wrap_content"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:hint="@string/enter_email"
+               android:textColorHint="@color/color2"
+               app:boxStrokeColor="@color/color2"
+               app:endIconTint="@color/color2"
+               app:endIconMode="clear_text"
+               app:startIconTint="@color/color2"
+               >
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:inputType="textPassword"
+                   android:id="@+id/eLoginEmail"
+                   android:textColor="@color/color2"
+                   />
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:layout_width="match_parent"
+               android:id="@+id/loginPassword"
+               android:layout_height="wrap_content"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:hint="@string/enter_your_password"
+               android:textColorHint="@color/color2"
+               app:boxStrokeColor="@color/color2"
+               android:layout_marginTop="15dp"
+               app:endIconTint="@color/color2"
+               app:endIconMode="password_toggle"
+               app:startIconTint="@color/color2"
+               >
+               <com.google.android.material.textfield.TextInputEditText
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:inputType="textEmailAddress"
+                   android:id="@+id/eLoginPassword"
+                   android:textColor="@color/color2"
+                   />
+           </com.google.android.material.textfield.TextInputLayout>
+
+
+           <androidx.appcompat.widget.AppCompatButton
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="15dp"
+               android:id="@+id/LoginButton"
+               android:text="@string/login"
+               android:textColor="@color/color2"
+               android:background="@color/color3"
+               android:textSize="25sp"
+               />
+           <androidx.appcompat.widget.AppCompatImageButton
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_marginTop="15dp"
+               android:scaleType="fitCenter"
+               android:src="@drawable/google2"
+               android:id="@+id/googleButtonLogin"
+               android:background="@color/white"
+
+               />
+
+           <RelativeLayout
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+
+               android:elevation="10dp"
+               android:padding="20dp"
+               android:visibility="visible"
+               android:id="@+id/loginProgressBar"
+               >
+               <ProgressBar
+                   android:layout_width="30dp"
+                   android:layout_height="30dp"
+                   android:layout_centerInParent="true"
+                   />
+
+           </RelativeLayout>
+
+
+
+   </LinearLayout>
+
+</ScrollView>
