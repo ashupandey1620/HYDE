@@ -85,7 +85,7 @@
 
                android:elevation="10dp"
                android:padding="20dp"
-               android:visibility="visible"
+               android:visibility="gone"
                android:id="@+id/loginProgressBar"
                >
                <ProgressBar
