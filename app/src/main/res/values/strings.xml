@@ -8,4 +8,6 @@
     <string name="login">Login</string>
     <string name="confirm_your_password">Confirm Your Password</string>
     <string name="sign_up">Sign UP</string>
+    <string name="profile">Profile</string>
+    <string name="about_us">About Us</string>
 </resources>
