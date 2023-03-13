@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
     class AppPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
 
         override fun getItemCount(): Int {
-            return 3;
+            return 2;
         }
 
         override fun createFragment(position: Int): Fragment {
@@ -54,7 +54,6 @@ class MainActivity : AppCompatActivity() {
             {
                 0->Chats()
                 2->Status()
-                3->Call()
                 else->Chats()
 
 
