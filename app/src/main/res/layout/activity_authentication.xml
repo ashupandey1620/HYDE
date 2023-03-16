@@ -24,7 +24,6 @@
         android:background="@drawable/view_bg"
         android:id="@+id/firstLayout"
         android:orientation="vertical"
-
         >
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
