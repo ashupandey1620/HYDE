@@ -19,7 +19,7 @@
           android:id="@+id/tabLayoutMain"
           android:layout_width="match_parent"
           android:layout_height="wrap_content"
-          android:background="@color/color9"
+          android:background="@color/color16"
           app:tabTextColor="@color/color2"
           app:tabIndicatorColor="@color/color2"
           app:tabIndicatorAnimationMode="elastic"
