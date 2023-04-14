@@ -7,6 +7,6 @@
         android:title="@string/about_us"
         />
     <item android:id="@+id/LogOut"
-        android:title="log out"
+        android:title="@string/log_out"
         />
 </menu>
