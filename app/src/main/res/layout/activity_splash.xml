@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/color5"
+    android:background="@color/light_cyan"
     tools:context=".SplashActivity">
 
     <pl.droidsonroids.gif.GifImageView
-        android:layout_width="400dp"
-        android:layout_height="400dp"
-        android:src="@drawable/hyde3"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/logo"
         android:layout_gravity="center"
         android:layout_marginTop="170dp"
         android:id="@+id/splashGif"
