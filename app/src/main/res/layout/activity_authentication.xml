@@ -11,9 +11,11 @@
         android:layout_width="250dp"
        android:layout_centerHorizontal="true"
         android:layout_height="250dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/gif"
         app:lottie_rawRes="@raw/kabootar"
         app:lottie_loop="true"
+        android:background="@drawable/view_bg"
         app:lottie_autoPlay="true" />
 
     <LinearLayout
