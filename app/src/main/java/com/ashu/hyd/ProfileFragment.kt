@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 import de.hdodenhof.circleimageview.CircleImageView
 
 class ProfileFragment : Fragment() {
@@ -21,9 +22,9 @@ class ProfileFragment : Fragment() {
     private lateinit var emailVis : TextView
     private lateinit var statusVis : TextView
 
-    private lateinit var nameEdit : TextInputEditText
-    private lateinit var emailEdit : TextInputEditText
-    private lateinit var statusEdit : TextInputEditText
+    private lateinit var nameEdit : TextInputLayout
+    private lateinit var emailEdit : TextInputLayout
+    private lateinit var statusEdit : TextInputLayout
 
     private lateinit var updateButton : Button
     private lateinit var saveButton : Button
@@ -40,9 +41,9 @@ private lateinit var progressBar : ProgressBar
         profilePic = view.findViewById(R.id.imgProfileImage)
         profilePicAdd = view.findViewById(R.id.imgAddProfileImage)
 
-        nameEdit = view.findViewById(R.id.eProfileName)
-        emailEdit = view.findViewById(R.id.eInputEmail)
-        statusEdit = view.findViewById(R.id.eProfileStatus)
+        nameEdit = view.findViewById(R.id.profile_name)
+        emailEdit = view.findViewById(R.id.email_name)
+        statusEdit = view.findViewById(R.id.profile_status)
 
         nameVis = view.findViewById(R.id.textNameProfile)
         emailVis = view.findViewById(R.id.textEmailProfile)
@@ -72,6 +73,18 @@ private lateinit var progressBar : ProgressBar
 
         saveButton.visibility = View.VISIBLE
         saveButton.setOnClickListener {
+            nameVis.visibility = View.VISIBLE
+            emailVis.visibility = View.VISIBLE
+            statusVis.visibility = View.VISIBLE
+
+            nameEdit.visibility = View.GONE
+            emailEdit.visibility = View.GONE
+            statusEdit.visibility = View.GONE
+            saveButton.visibility = View.GONE
+
+            updateButton.visibility = View.VISIBLE
+
+
 
         }
 
