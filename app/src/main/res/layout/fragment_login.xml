@@ -29,7 +29,7 @@
                <com.google.android.material.textfield.TextInputEditText
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
-                   android:inputType="textPassword"
+                   android:inputType="text"
                    android:id="@+id/eLoginEmail"
                    android:textColor="@color/color2"
                    />
