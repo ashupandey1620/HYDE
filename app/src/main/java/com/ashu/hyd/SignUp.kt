@@ -57,7 +57,7 @@ class SignUp : Fragment() {
             }
             else if (TextUtils.isEmpty(password))
             {
-                enterPassword.error = "Password is Required"
+                enterPassword.error = "Password is Empty"
             }
             else
             {
