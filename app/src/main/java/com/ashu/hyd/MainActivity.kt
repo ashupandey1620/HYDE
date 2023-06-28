@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tabLayout       : TabLayout
     private lateinit var toolbar         : Toolbar
     private lateinit var appPagerAdapter : AppPagerAdapter
-    private val titles = arrayListOf("Chats","Status","Call")
+    private val titles = arrayListOf("Chats","Status")
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
