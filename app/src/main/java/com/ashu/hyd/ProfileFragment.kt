@@ -43,6 +43,8 @@ class ProfileFragment : Fragment() {
 
 private lateinit var progressBar : ProgressBar
 
+private lateinit var userID: String
+
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
@@ -50,7 +52,8 @@ private lateinit var progressBar : ProgressBar
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
 
-
+ auth = FirebaseAuth.getInstance()
+        fstore = FirebaseFirestore.getInstance()
 
         editName = view.findViewById(R.id.eProfileName)
         editEmail = view.findViewById(R.id.eProfileEmail)
