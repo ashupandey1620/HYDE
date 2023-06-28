@@ -55,8 +55,6 @@ class MainActivity : AppCompatActivity() {
                 0->Chats()
                 2->Status()
                 else->Chats()
-
-
             }
         }
 
