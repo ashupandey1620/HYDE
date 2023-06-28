@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
         toolbar       =  findViewById(R.id.toolbarMain)
         auth          =  FirebaseAuth.getInstance()
         viewPager2    =  findViewById(R.id.viewPager2Main)
-        tabLayout     =  findViewById(R.id.tabLayoutMain)
+        tabLayout     =  findViewById(R.id.tabLayout)
         toolbar.title =  "HYDE"
         setSupportActionBar(toolbar)
         appPagerAdapter    = AppPagerAdapter(this)
