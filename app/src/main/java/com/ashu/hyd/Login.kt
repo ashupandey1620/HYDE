@@ -33,7 +33,9 @@ class Login : Fragment() {
 
     private lateinit var googleSignInOption  : GoogleSignInOptions
     private lateinit var mGoogleSignInClient : GoogleSignInClient
+    //intent launcher
     private lateinit var resultLaunch        : ActivityResultLauncher<Intent>
+    //
     private val rcSignIn = 1011
 
 
