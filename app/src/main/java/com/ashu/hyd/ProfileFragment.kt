@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 import de.hdodenhof.circleimageview.CircleImageView
@@ -27,6 +28,7 @@ class ProfileFragment : Fragment() {
     private lateinit var updateButton : Button
     private lateinit var saveButton : Button
 
+private lateinit var progressBar : ProgressBar
 
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
@@ -48,6 +50,31 @@ class ProfileFragment : Fragment() {
 
         updateButton = view.findViewById(R.id.btUpdateProfile)
         saveButton = view.findViewById(R.id.btSaveProfile)
+
+        progressBar = view.findViewById(R.id.profileProgressBar)
+
+
+        updateButton.visibility = View.VISIBLE
+        updateButton.setOnClickListener{
+            nameVis.visibility = View.GONE
+            emailVis.visibility = View.GONE
+            statusVis.visibility = View.GONE
+
+            nameEdit.visibility = View.VISIBLE
+            emailEdit.visibility = View.VISIBLE
+            statusEdit.visibility = View.VISIBLE
+            saveButton.visibility = View.VISIBLE
+
+            updateButton.visibility = View.GONE
+
+
+        }
+
+        saveButton.visibility = View.VISIBLE
+        saveButton.setOnClickListener {
+
+        }
+
 
         return view
     }
