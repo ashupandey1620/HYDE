@@ -49,6 +49,8 @@ private lateinit var progressBar : ProgressBar
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
 
+        
+
         editName = view.findViewById(R.id.eProfileName)
         editEmail = view.findViewById(R.id.eProfileEmail)
         editName = view.findViewById(R.id.eProfileStatus)
