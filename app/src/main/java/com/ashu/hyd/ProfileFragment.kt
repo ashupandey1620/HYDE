@@ -1,6 +1,7 @@
 package com.ashu.hyd
 
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -49,7 +50,7 @@ private lateinit var progressBar : ProgressBar
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
 
-        
+
 
         editName = view.findViewById(R.id.eProfileName)
         editEmail = view.findViewById(R.id.eProfileEmail)
@@ -85,6 +86,11 @@ private lateinit var progressBar : ProgressBar
 
             updateButton.visibility = View.GONE
 
+
+
+            editName.text = Editable.Factory.getInstance().newEditable(nameVis.text.toString())
+            editEmail.text = Editable.Factory.getInstance().newEditable(emailVis.text.toString())
+            editStatus.text = Editable.Factory.getInstance().newEditable(statusVis.text.toString())
 
         }
 
