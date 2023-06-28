@@ -7,7 +7,7 @@ import android.widget.FrameLayout
 import android.widget.Toolbar
 
 class MenuActivity : AppCompatActivity() {
-    private lateinit var toolbarMenu: Toolbar
+    private lateinit var toolbarMenu: androidx.appcompat.widget.Toolbar
     private lateinit var frameLayout: FrameLayout
     private lateinit var optionValue: String
     override fun onCreate(savedInstanceState: Bundle?) {
