@@ -97,7 +97,7 @@
             />
     </com.google.android.material.textfield.TextInputLayout>
     <TextView
-android:id="@+id/textEmailStatus"
+       android:id="@+id/textStatusProfile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your Status :"

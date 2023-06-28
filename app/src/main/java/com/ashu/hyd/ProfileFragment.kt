@@ -40,11 +40,11 @@ class ProfileFragment : Fragment() {
 
         nameEdit = view.findViewById(R.id.eProfileName)
         emailEdit = view.findViewById(R.id.eInputEmail)
-        statusEdit = view.findViewById(R.id.)
+        statusEdit = view.findViewById(R.id.eProfileStatus)
 
-        nameVis = view.findViewById(R.id.imgProfileImage)
-        emailVis = view.findViewById(R.id.imgProfileImage)
-        statusVis = view.findViewById(R.id.imgProfileImage)
+        nameVis = view.findViewById(R.id.textNameProfile)
+        emailVis = view.findViewById(R.id.textEmailProfile)
+        statusVis = view.findViewById(R.id.textStatusProfile)
 
 
 
