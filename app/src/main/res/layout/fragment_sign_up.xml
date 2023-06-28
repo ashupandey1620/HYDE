@@ -17,6 +17,7 @@
             android:layout_width="match_parent"
             android:id="@+id/SignUpEmail"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/enter_email"
             android:textColorHint="@color/color2"
             app:boxStrokeColor="@color/color2"
@@ -28,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:inputType="textPassword"
-                android:id="@+id/eSignUpEmail"
+                android:id="@+id/eLoginEmail"
                 android:textColor="@color/color2"
                 />
         </com.google.android.material.textfield.TextInputLayout>
@@ -39,7 +40,6 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_your_password"
             android:textColorHint="@color/color2"
-            android:layout_below="@+id/loginEmail"
             app:boxStrokeColor="@color/color2"
             android:layout_marginTop="15dp"
             app:endIconTint="@color/color2"
@@ -61,7 +61,6 @@
             android:layout_height="wrap_content"
             android:hint="@string/confirm_your_password"
             android:textColorHint="@color/color2"
-            android:layout_below="@+id/SignUpPassword"
             app:boxStrokeColor="@color/color2"
             android:layout_marginTop="15dp"
             app:endIconTint="@color/color2"
@@ -79,7 +78,6 @@
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/SignInConfirmPassword"
             android:layout_marginTop="15dp"
             android:id="@+id/SignUpButton"
             android:text="@string/sign_up"
