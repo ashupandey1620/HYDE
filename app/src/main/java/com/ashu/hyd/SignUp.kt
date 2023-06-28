@@ -97,6 +97,8 @@ class SignUp : Fragment() {
                 val obj = mutableMapOf<String,String>()
                 obj["userEmail"] = Em
                 obj["userPassword"] = Ps
+                obj["userName"] = ""
+                obj["userStatus"] = ""
 
                 dB.set(obj).addOnSuccessListener {
                     Log.d("onSuccess" , "User Created Successfully")

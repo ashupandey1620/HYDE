@@ -86,9 +86,9 @@ private lateinit var userID: String
             }
             else
             {
-                nameVis.text = value?.getString("profileName")
-                emailVis.text = value?.getString("profileEmail")
-                statusVis.text = value?.getString("profileStatus")
+                nameVis.text = value?.getString("userName")
+                emailVis.text = value?.getString("userEmail")
+                statusVis.text = value?.getString("userStatus")
             }
         }
 
