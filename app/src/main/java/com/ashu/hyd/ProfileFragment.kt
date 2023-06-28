@@ -11,9 +11,16 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.DocumentReference
+import com.google.firebase.firestore.FirebaseFirestore
 import de.hdodenhof.circleimageview.CircleImageView
 
 class ProfileFragment : Fragment() {
+
+    private lateinit var auth : FirebaseAuth
+    private lateinit var fstore : FirebaseFirestore
+    private lateinit var db : DocumentReference
 
     private lateinit var profilePic : CircleImageView
     private lateinit var profilePicAdd : ImageView
