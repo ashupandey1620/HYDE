@@ -33,7 +33,23 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile , container , false)
+        val view  = inflater.inflate(R.layout.fragment_profile , container , false)
+
+        profilePic = view.findViewById(R.id.imgProfileImage)
+        profilePicAdd = view.findViewById(R.id.imgAddProfileImage)
+
+        nameEdit = view.findViewById(R.id.eProfileName)
+        emailEdit = view.findViewById(R.id.eInputEmail)
+        statusEdit = view.findViewById(R.id.)
+
+        nameVis = view.findViewById(R.id.imgProfileImage)
+        emailVis = view.findViewById(R.id.imgProfileImage)
+        statusVis = view.findViewById(R.id.imgProfileImage)
+
+
+
+
+        return view
     }
 
 
