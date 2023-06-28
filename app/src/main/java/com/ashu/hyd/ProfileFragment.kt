@@ -46,8 +46,8 @@ class ProfileFragment : Fragment() {
         emailVis = view.findViewById(R.id.textEmailProfile)
         statusVis = view.findViewById(R.id.textStatusProfile)
 
-
-
+        updateButton = view.findViewById(R.id.btUpdateProfile)
+        saveButton = view.findViewById(R.id.btSaveProfile)
 
         return view
     }
