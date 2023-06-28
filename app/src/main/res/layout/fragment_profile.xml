@@ -36,11 +36,32 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:padding="10dp"
-        android:layout_margin="10dp"
+
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/baseline_account_box_24" />
 
-
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/profile_name"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="Enter Your Name"
+        android:textColorHint="@color/color2"
+        app:boxStrokeColor="@color/color2"
+        app:endIconTint="@color/color2"
+        android:visibility="gone"
+        app:endIconMode="clear_text"
+        android:layout_margin="20dp"
+        app:startIconTint="@color/color2"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:id="@+id/eProfileName"
+            android:textColor="@color/color2"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
         android:id="@+id/textEmailProfile"
@@ -50,9 +71,31 @@
         android:textStyle="bold"
     android:textSize="20sp"
     android:padding="10dp"
-    android:layout_margin="10dp"
     android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_email" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/email_name"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/enter_email"
+        android:textColorHint="@color/color2"
+        android:visibility="gone"
+        app:boxStrokeColor="@color/color2"
+        android:layout_margin="20dp"
+        app:endIconTint="@color/color2"
+        app:endIconMode="clear_text"
+        app:startIconTint="@color/color2"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:id="@+id/eInputEmail"
+            android:textColor="@color/color2"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
     <TextView
 android:id="@+id/textEmailStatus"
         android:layout_width="match_parent"
@@ -61,9 +104,30 @@ android:id="@+id/textEmailStatus"
         android:textStyle="bold"
         android:textSize="20sp"
         android:padding="10dp"
-        android:layout_margin="10dp"
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_status" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/profile_status"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:hint="@string/enter_email"
+        android:textColorHint="@color/color2"
+        app:boxStrokeColor="@color/color2"
+        android:layout_margin="20dp"
+        android:visibility="gone"
+        app:endIconTint="@color/color2"
+        app:endIconMode="clear_text"
+        app:startIconTint="@color/color2"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:id="@+id/eProfileStatus"
+            android:textColor="@color/color2"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 <androidx.appcompat.widget.AppCompatButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
