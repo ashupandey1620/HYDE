@@ -63,7 +63,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:id="@+id/eProfileName"
             android:textColor="@color/color2"
             />
@@ -97,7 +97,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:id="@+id/eProfileEmail"
             android:textColor="@color/color2"
             />
@@ -129,7 +129,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:inputType="textPassword"
+            android:inputType="text"
             android:id="@+id/eProfileStatus"
             android:textColor="@color/color2"
             />
