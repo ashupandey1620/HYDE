@@ -2,6 +2,7 @@ package com.ashu.hyd
 
 import android.os.Bundle
 import android.text.Editable
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +22,7 @@ class ProfileFragment : Fragment() {
 
     private lateinit var auth : FirebaseAuth
     private lateinit var fstore : FirebaseFirestore
-    private lateinit var db : DocumentReference
+    private lateinit var database : DocumentReference
 
     private lateinit var profilePic : CircleImageView
     private lateinit var profilePicAdd : ImageView
@@ -75,6 +76,21 @@ private lateinit var userID: String
         saveButton = view.findViewById(R.id.btSaveProfile)
 
         progressBar = view.findViewById(R.id.profileProgressBar)
+
+
+        database = fstore.collection("users").document(userID)
+        database.addSnapshotListener { value, error ->
+            if(error!=null)
+            {
+                Log.d("Error","Unable to fetch the Data")
+            }
+            else
+            {
+                nameVis.text = value?.getString("profileName")
+                emailVis.text = value?.getString("profileEmail")
+                statusVis.text = value?.getString("profileStatus")
+            }
+        }
 
 
         updateButton.visibility = View.VISIBLE
