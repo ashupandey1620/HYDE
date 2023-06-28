@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -31,13 +32,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your Name :"
-        android:drawableLeft="@drawable/baseline_account_box_24"
         android:textStyle="bold"
         android:textSize="20sp"
         android:padding="10dp"
         android:layout_margin="10dp"
         android:textColor="@color/black"
-        />
+        app:drawableLeftCompat="@drawable/baseline_account_box_24" />
 
     <TextView
         android:layout_width="match_parent"
@@ -45,23 +45,44 @@
         android:hint="Your Status :"
         android:textStyle="bold"
         android:textSize="20sp"
-        android:drawableLeft="@drawable/ic_status"
         android:padding="10dp"
         android:layout_margin="10dp"
         android:textColor="@color/black"
-        />
+        app:drawableLeftCompat="@drawable/ic_status" />
 
     <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="Email :"
-        android:drawableLeft="@drawable/ic_email"
-    android:textStyle="bold"
+        android:textStyle="bold"
     android:textSize="20sp"
     android:padding="10dp"
     android:layout_margin="10dp"
     android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_email" />
+<androidx.appcompat.widget.AppCompatButton
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:text="Update"
+    android:textSize="24sp"
+    android:layout_marginStart="40dp"
+    android:layout_marginEnd="40dp"
+    android:background="@color/light_cyan"
+    android:textStyle="bold"
     />
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:textSize="24sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:background="@color/light_cyan"
+        android:text="Save"
+        android:textStyle="bold"
+        />
 
 </LinearLayout>
