@@ -15,9 +15,7 @@ class AuthenticationActivity : AppCompatActivity(),FirebaseAuth.AuthStateListene
     private lateinit var viewPager : ViewPager2
     private lateinit var tabLayout : TabLayout
     private lateinit var viewPagerAdapter : AuthenticationPagerAdapter
-
-
-    private val titles = arrayListOf("login","SignUp")
+    private val titles = arrayListOf("Login","SignUp")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +25,7 @@ class AuthenticationActivity : AppCompatActivity(),FirebaseAuth.AuthStateListene
         viewPagerAdapter = AuthenticationPagerAdapter(this)
         viewPager.adapter = viewPagerAdapter
         TabLayoutMediator(tabLayout,viewPager){
-            tab,position->titles[position]
+            tab,position->tab.text = titles[position]
         }.attach()
     }
     class AuthenticationPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity)
