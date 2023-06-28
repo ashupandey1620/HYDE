@@ -127,6 +127,13 @@ private lateinit var userID: String
 
             updateButton.visibility = View.VISIBLE
 
+            val object1 = mutableMapOf<String,String>()
+            object1["userName"] = editName.text.toString()
+            object1["userEmail"] = editEmail.text.toString()
+            object1["userStatus"] = editStatus.text.toString()
+            database.set(object1).addOnSuccessListener {
+                Log.d("Success","Data Updated")
+            }
 
 
         }
