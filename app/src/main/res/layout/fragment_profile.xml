@@ -7,12 +7,10 @@
     android:orientation="vertical"
     tools:context=".ProfileFragment">
 
-
-
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:id="@+id/profileImage"
+        android:id="@+id/imgProfileImage"
         android:layout_marginTop="40dp"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:src="@drawable/user3"
@@ -24,14 +22,17 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:src="@drawable/add3"
+        android:id="@+id/imgAddProfileImage"
         android:layout_gravity="center"
         android:layout_marginTop="-30dp"
         android:layout_marginStart="30dp"
         />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Your Name :"
+        android:id="@+id/textNameProfile"
         android:textStyle="bold"
         android:textSize="20sp"
         android:padding="10dp"
@@ -39,18 +40,10 @@
         android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/baseline_account_box_24" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Your Status :"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:padding="10dp"
-        android:layout_margin="10dp"
-        android:textColor="@color/black"
-        app:drawableLeftCompat="@drawable/ic_status" />
+
 
     <TextView
+        android:id="@+id/textEmailProfile"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:hint="Email :"
@@ -60,6 +53,17 @@
     android:layout_margin="10dp"
     android:textColor="@color/black"
         app:drawableLeftCompat="@drawable/ic_email" />
+    <TextView
+android:id="@+id/textEmailStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Status :"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="10dp"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"
+        app:drawableLeftCompat="@drawable/ic_status" />
 <androidx.appcompat.widget.AppCompatButton
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -69,6 +73,7 @@
     android:id="@+id/btUpdateProfile"
     android:textSize="24sp"
     android:layout_marginStart="40dp"
+    android:visibility="gone"
     android:layout_marginEnd="40dp"
     android:background="@color/light_cyan"
     android:textStyle="bold"
@@ -80,6 +85,7 @@
         android:padding="10dp"
         android:id="@+id/btSaveProfile"
         android:textSize="24sp"
+        android:visibility="gone"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
         android:background="@color/light_cyan"
