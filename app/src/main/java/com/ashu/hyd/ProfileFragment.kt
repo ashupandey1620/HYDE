@@ -54,6 +54,7 @@ private lateinit var userID: String
 
  auth = FirebaseAuth.getInstance()
         fstore = FirebaseFirestore.getInstance()
+        userID = auth.currentUser!!.uid
 
         editName = view.findViewById(R.id.eProfileName)
         editEmail = view.findViewById(R.id.eProfileEmail)
