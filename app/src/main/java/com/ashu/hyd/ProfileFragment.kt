@@ -59,7 +59,7 @@ private lateinit var userID: String
 
         editName = view.findViewById(R.id.eProfileName)
         editEmail = view.findViewById(R.id.eProfileEmail)
-        editName = view.findViewById(R.id.eProfileStatus)
+        editStatus = view.findViewById(R.id.eProfileStatus)
 
         profilePic = view.findViewById(R.id.imgProfileImage)
         profilePicAdd = view.findViewById(R.id.imgAddProfileImage)
