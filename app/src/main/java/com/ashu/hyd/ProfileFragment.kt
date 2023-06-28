@@ -29,6 +29,10 @@ class ProfileFragment : Fragment() {
     private lateinit var updateButton : Button
     private lateinit var saveButton : Button
 
+    private lateinit var editName : TextInputEditText
+    private lateinit var editEmail : TextInputEditText
+    private lateinit var editStatus : TextInputEditText
+
 private lateinit var progressBar : ProgressBar
 
     override fun onCreateView(
@@ -37,6 +41,10 @@ private lateinit var progressBar : ProgressBar
     ): View? {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
+
+        editName = view.findViewById(R.id.eProfileName)
+        editEmail = view.findViewById(R.id.eProfileEmail)
+        editName = view.findViewById(R.id.eProfileStatus)
 
         profilePic = view.findViewById(R.id.imgProfileImage)
         profilePicAdd = view.findViewById(R.id.imgAddProfileImage)
