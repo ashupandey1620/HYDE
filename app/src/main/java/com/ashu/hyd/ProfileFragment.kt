@@ -106,15 +106,13 @@ private lateinit var userID: String
 
             updateButton.visibility = View.GONE
 
-
-
             editName.text = Editable.Factory.getInstance().newEditable(nameVis.text.toString())
             editEmail.text = Editable.Factory.getInstance().newEditable(emailVis.text.toString())
             editStatus.text = Editable.Factory.getInstance().newEditable(statusVis.text.toString())
 
         }
 
-        saveButton.visibility = View.VISIBLE
+        saveButton.visibility = View.GONE
         saveButton.setOnClickListener {
             nameVis.visibility = View.VISIBLE
             emailVis.visibility = View.VISIBLE
