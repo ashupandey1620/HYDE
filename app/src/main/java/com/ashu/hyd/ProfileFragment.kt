@@ -51,7 +51,7 @@ private lateinit var progressBar : ProgressBar
 
 private lateinit var userID: String
 
-private lateinit var bitmap: Bitmap
+private lateinit var image : ByteArray
 private lateinit var storageReference : StorageReference
 
     override fun onCreateView(
@@ -166,6 +166,16 @@ private lateinit var storageReference : StorageReference
     {
         val baos = ByteArrayOutputStream()
         it?.compress(Bitmap.CompressFormat.JPEG,50,baos)
+        image  = baos.toByteArray()
+        storageReference.putBytes(image).addOnSuccessListener {
+            storageReference.downloadUrl.addOnSuccessListener {
+                val obj = mutableMapOf<String,String>()
+                obj["userProfilePhoto"] = it.toString()
+                database.update(obj as Map<String,Any>).addOnSuccessListener {
+                    Log.d("On Success","Profile Picture Uploaded")
+                }
+            }
+        }
     }
 
 
