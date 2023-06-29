@@ -12,6 +12,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
@@ -20,6 +21,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import de.hdodenhof.circleimageview.CircleImageView
+import java.io.ByteArrayOutputStream
 
 class ProfileFragment : Fragment() {
 
@@ -154,6 +156,16 @@ private lateinit var storageReference : StorageReference
 
     private fun takephoto(){
 
+        val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
+            upload(it)
+        }
+        register.launch(null)
+    }
+
+    private fun upload(it: Bitmap?)
+    {
+        val baos = ByteArrayOutputStream()
+        it?.compress(Bitmap.CompressFormat.JPEG,50,baos)
     }
 
 
