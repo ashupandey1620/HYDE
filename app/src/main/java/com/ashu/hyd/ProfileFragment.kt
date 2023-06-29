@@ -54,6 +54,9 @@ private lateinit var userID: String
 private lateinit var image : ByteArray
 private lateinit var storageReference : StorageReference
 
+    val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
+        upload(it)
+    }
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
@@ -156,9 +159,7 @@ private lateinit var storageReference : StorageReference
 
     private fun takephoto(){
 
-        val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
-            upload(it)
-        }
+
         register.launch(null)
     }
 
