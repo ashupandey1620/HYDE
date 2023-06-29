@@ -17,6 +17,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import de.hdodenhof.circleimageview.CircleImageView
 
@@ -57,6 +58,8 @@ private lateinit var storageReference : StorageReference
     ): View? {
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
+
+        storageReference = FirebaseStorage.getInstance().reference.child("$userID/profilePhoto.jpg")
 
         auth = FirebaseAuth.getInstance()
         fstore = FirebaseFirestore.getInstance()
@@ -141,8 +144,16 @@ private lateinit var storageReference : StorageReference
 
         }
 
+        profilePicAdd.setOnClickListener{
+            takephoto()
+        }
+
 
         return view
+    }
+
+    private fun takephoto(){
+
     }
 
 
