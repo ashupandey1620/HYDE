@@ -1,5 +1,6 @@
 package com.ashu.hyd
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.text.Editable
 import android.util.Log
@@ -16,6 +17,7 @@ import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.StorageReference
 import de.hdodenhof.circleimageview.CircleImageView
 
 class ProfileFragment : Fragment() {
@@ -46,6 +48,9 @@ private lateinit var progressBar : ProgressBar
 
 private lateinit var userID: String
 
+private lateinit var bitmap: Bitmap
+private lateinit var storageReference : StorageReference
+
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
@@ -53,7 +58,7 @@ private lateinit var userID: String
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
 
- auth = FirebaseAuth.getInstance()
+        auth = FirebaseAuth.getInstance()
         fstore = FirebaseFirestore.getInstance()
         userID = auth.currentUser!!.uid
 
