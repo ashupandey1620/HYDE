@@ -54,9 +54,9 @@ private lateinit var userID: String
 private lateinit var image : ByteArray
 private lateinit var storageReference : StorageReference
 
-    val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
-        upload(it)
-    }
+//    val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
+//        upload(it)
+//    }
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
@@ -64,7 +64,7 @@ private lateinit var storageReference : StorageReference
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
 
-        storageReference = FirebaseStorage.getInstance().reference.child("$userID/profilePhoto.jpg")
+        storageReference = FirebaseStorage.getInstance().reference.child("$userID/profilePhoto")
 
         auth = FirebaseAuth.getInstance()
         fstore = FirebaseFirestore.getInstance()
@@ -108,6 +108,7 @@ private lateinit var storageReference : StorageReference
 
         updateButton.visibility = View.VISIBLE
         updateButton.setOnClickListener{
+
             nameVis.visibility = View.GONE
             emailVis.visibility = View.GONE
             statusVis.visibility = View.GONE
@@ -115,6 +116,7 @@ private lateinit var storageReference : StorageReference
             nameEdit.visibility = View.VISIBLE
             emailEdit.visibility = View.VISIBLE
             statusEdit.visibility = View.VISIBLE
+
             saveButton.visibility = View.VISIBLE
 
             updateButton.visibility = View.GONE
@@ -149,35 +151,35 @@ private lateinit var storageReference : StorageReference
 
         }
 
-        profilePicAdd.setOnClickListener{
-            takephoto()
-        }
+//        profilePicAdd.setOnClickListener{
+//            takephoto()
+//        }
 
 
         return view
     }
 
-    private fun takephoto(){
-
-
-        register.launch(null)
-    }
-
-    private fun upload(it: Bitmap?)
-    {
-        val baos = ByteArrayOutputStream()
-        it?.compress(Bitmap.CompressFormat.JPEG,50,baos)
-        image  = baos.toByteArray()
-        storageReference.putBytes(image).addOnSuccessListener {
-            storageReference.downloadUrl.addOnSuccessListener {
-                val obj = mutableMapOf<String,String>()
-                obj["userProfilePhoto"] = it.toString()
-                database.update(obj as Map<String,Any>).addOnSuccessListener {
-                    Log.d("On Success","Profile Picture Uploaded")
-                }
-            }
-        }
-    }
+//    private fun takephoto(){
+//
+//
+//        register.launch(null)
+//    }
+//
+//    private fun upload(it: Bitmap?)
+//    {
+//        val baos = ByteArrayOutputStream()
+//        it?.compress(Bitmap.CompressFormat.JPEG,50,baos)
+//        image  = baos.toByteArray()
+//        storageReference.putBytes(image).addOnSuccessListener {
+//            storageReference.downloadUrl.addOnSuccessListener {
+//                val obj = mutableMapOf<String,String>()
+//                obj["userProfilePhoto"] = it.toString()
+//                database.update(obj as Map<String,Any>).addOnSuccessListener {
+//                    Log.d("On Success","Profile Picture Uploaded")
+//                }
+//            }
+//        }
+//    }
 
 
 }
