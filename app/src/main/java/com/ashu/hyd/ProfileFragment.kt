@@ -70,7 +70,7 @@ private lateinit var storageReference : StorageReference
         fstore = FirebaseFirestore.getInstance()
         userID = auth.currentUser!!.uid
 
-        storageReference = FirebaseStorage.getInstance().reference.child("${userID}/profilePhoto.jpeg")
+        storageReference = FirebaseStorage.getInstance().reference.child("${userID}/profilePhoto")
         editName = view.findViewById(R.id.eProfileName)
         editEmail = view.findViewById(R.id.eProfileEmail)
         editStatus = view.findViewById(R.id.eProfileStatus)
