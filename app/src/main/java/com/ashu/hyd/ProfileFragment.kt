@@ -64,12 +64,13 @@ private lateinit var storageReference : StorageReference
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
 
-        storageReference = FirebaseStorage.getInstance().reference.child("$userID/profilePhoto")
+
 
         auth = FirebaseAuth.getInstance()
         fstore = FirebaseFirestore.getInstance()
         userID = auth.currentUser!!.uid
 
+        storageReference = FirebaseStorage.getInstance().reference.child("${userID}/profilePhoto")
         editName = view.findViewById(R.id.eProfileName)
         editEmail = view.findViewById(R.id.eProfileEmail)
         editStatus = view.findViewById(R.id.eProfileStatus)

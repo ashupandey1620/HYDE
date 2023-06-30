@@ -39,9 +39,10 @@ class SignUp : Fragment() {
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_sign_up , container , false)
-        enterEmail = view.findViewById(R.id.eSignUpEmail)
-        enterPassword = view.findViewById(R.id.eSignUpPassword)
-        confirmPassword = view.findViewById(R.id.eSignUpConfirmPassword)
+        enterEmail = view.findViewById(R.id.SignUpEmail)
+        enterPassword = view.findViewById(R.id.SignInPassword)
+        confirmPassword = view.findViewById(R.id.SignUpPassword)
+
         progressBar = view.findViewById(R.id.signUpProgressBar)
 
 
