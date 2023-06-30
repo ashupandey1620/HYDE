@@ -51,8 +51,8 @@ private lateinit var progressBar : ProgressBar
 
 private lateinit var userID: String
 
-//private lateinit var image : ByteArray
-//private lateinit var storageReference : StorageReference
+private lateinit var image : ByteArray
+private lateinit var storageReference : StorageReference
 
 //    val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
 //        upload(it)
@@ -64,7 +64,7 @@ private lateinit var userID: String
         // Inflate the layout for this fragment
         val view  = inflater.inflate(R.layout.fragment_profile , container , false)
 
-//        storageReference = FirebaseStorage.getInstance().reference.child("$userID/profilePhoto")
+        storageReference = FirebaseStorage.getInstance().reference.child("$userID/profilePhoto")
 
         auth = FirebaseAuth.getInstance()
         fstore = FirebaseFirestore.getInstance()
