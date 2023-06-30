@@ -54,9 +54,9 @@ private lateinit var userID: String
 private lateinit var image : ByteArray
 private lateinit var storageReference : StorageReference
 
-//    val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
-//        upload(it)
-//    }
+    val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
+        upload(it)
+    }
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
@@ -151,35 +151,35 @@ private lateinit var storageReference : StorageReference
 
         }
 
-//        profilePicAdd.setOnClickListener{
-//            takephoto()
-//        }
+        profilePicAdd.setOnClickListener{
+            takephoto()
+        }
 
 
         return view
     }
 
-//    private fun takephoto(){
-//
-//
-//        register.launch(null)
-//    }
-//
-//    private fun upload(it: Bitmap?)
-//    {
-//        val baos = ByteArrayOutputStream()
-//        it?.compress(Bitmap.CompressFormat.JPEG,50,baos)
-//        image  = baos.toByteArray()
-//        storageReference.putBytes(image).addOnSuccessListener {
-//            storageReference.downloadUrl.addOnSuccessListener {
-//                val obj = mutableMapOf<String,String>()
-//                obj["userProfilePhoto"] = it.toString()
-//                database.update(obj as Map<String,Any>).addOnSuccessListener {
-//                    Log.d("On Success","Profile Picture Uploaded")
-//                }
-//            }
-//        }
-//    }
+    private fun takephoto(){
+
+
+        register.launch(null)
+    }
+
+    private fun upload(it: Bitmap?)
+    {
+        val baos = ByteArrayOutputStream()
+        it?.compress(Bitmap.CompressFormat.JPEG,50,baos)
+        image  = baos.toByteArray()
+        storageReference.putBytes(image).addOnSuccessListener {
+            storageReference.downloadUrl.addOnSuccessListener {
+                val obj = mutableMapOf<String,String>()
+                obj["userProfilePhoto"] = it.toString()
+                database.update(obj as Map<String,Any>).addOnSuccessListener {
+                    Log.d("On Success","Profile Picture Uploaded")
+                }
+            }
+        }
+    }
 
 
 }
