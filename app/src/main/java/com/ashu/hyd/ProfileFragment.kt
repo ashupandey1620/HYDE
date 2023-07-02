@@ -32,9 +32,9 @@ class ProfileFragment : Fragment() {
     private lateinit var profilePic : CircleImageView
     private lateinit var profilePicAdd : ImageView
 
-    private lateinit var nameVis : TextView
-    private lateinit var emailVis : TextView
-    private lateinit var statusVis : TextView
+    private lateinit var nameVisible : TextView
+    private lateinit var emailVisible : TextView
+    private lateinit var statusVisible : TextView
 
     private lateinit var nameEdit : TextInputLayout
     private lateinit var emailEdit : TextInputLayout
@@ -82,9 +82,9 @@ private lateinit var storageReference : StorageReference
         emailEdit = view.findViewById(R.id.email_name)
         statusEdit = view.findViewById(R.id.profile_status)
 
-        nameVis = view.findViewById(R.id.textNameProfile)
-        emailVis = view.findViewById(R.id.textEmailProfile)
-        statusVis = view.findViewById(R.id.textStatusProfile)
+        nameVisible = view.findViewById(R.id.textNameProfile)
+        emailVisible = view.findViewById(R.id.textEmailProfile)
+        statusVisible = view.findViewById(R.id.textStatusProfile)
 
         updateButton = view.findViewById(R.id.btUpdateProfile)
         saveButton = view.findViewById(R.id.btSaveProfile)
@@ -100,9 +100,9 @@ private lateinit var storageReference : StorageReference
             }
             else
             {
-                nameVis.text = value?.getString("userName")
-                emailVis.text = value?.getString("userEmail")
-                statusVis.text = value?.getString("userStatus")
+                nameVisible.text = value?.getString("userName")
+                emailVisible.text = value?.getString("userEmail")
+                statusVisible.text = value?.getString("userStatus")
             }
         }
 
@@ -110,9 +110,9 @@ private lateinit var storageReference : StorageReference
         updateButton.visibility = View.VISIBLE
         updateButton.setOnClickListener{
 
-            nameVis.visibility = View.GONE
-            emailVis.visibility = View.GONE
-            statusVis.visibility = View.GONE
+            nameVisible.visibility = View.GONE
+            emailVisible.visibility = View.GONE
+            statusVisible.visibility = View.GONE
 
             nameEdit.visibility = View.VISIBLE
             emailEdit.visibility = View.VISIBLE
@@ -122,17 +122,17 @@ private lateinit var storageReference : StorageReference
 
             updateButton.visibility = View.GONE
 
-            editName.text = Editable.Factory.getInstance().newEditable(nameVis.text.toString())
-            editEmail.text = Editable.Factory.getInstance().newEditable(emailVis.text.toString())
-            editStatus.text = Editable.Factory.getInstance().newEditable(statusVis.text.toString())
+            editName.text = Editable.Factory.getInstance().newEditable(nameVisible.text.toString())
+            editEmail.text = Editable.Factory.getInstance().newEditable(emailVisible.text.toString())
+            editStatus.text = Editable.Factory.getInstance().newEditable(statusVisible.text.toString())
 
         }
 
         saveButton.visibility = View.GONE
         saveButton.setOnClickListener {
-            nameVis.visibility = View.VISIBLE
-            emailVis.visibility = View.VISIBLE
-            statusVis.visibility = View.VISIBLE
+            nameVisible.visibility = View.VISIBLE
+            emailVisible.visibility = View.VISIBLE
+            statusVisible.visibility = View.VISIBLE
 
             nameEdit.visibility = View.GONE
             emailEdit.visibility = View.GONE
