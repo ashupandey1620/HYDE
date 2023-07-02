@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+        contactsButton = findViewById(R.id.ButtonFloatingContacts)
         toolbar       =  findViewById(R.id.toolbarMain)
         auth          =  FirebaseAuth.getInstance()
         viewPager2    =  findViewById(R.id.viewPager2Main)
