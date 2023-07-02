@@ -20,6 +20,7 @@ import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
+import com.squareup.picasso.Picasso
 import de.hdodenhof.circleimageview.CircleImageView
 import java.io.ByteArrayOutputStream
 
@@ -103,7 +104,7 @@ private lateinit var storageReference : StorageReference
                 nameVisible.text = value?.getString("userName")
                 emailVisible.text = value?.getString("userEmail")
                 statusVisible.text = value?.getString("userStatus")
-                Picasso.get
+                Picasso.get().load(value?.getString("userProfilePhoto")).error(R.drawable.user3).into(profilePic)
             }
         }
 
