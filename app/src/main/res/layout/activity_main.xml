@@ -38,7 +38,7 @@
        android:layout_marginTop="-100dp"
        android:src="@drawable/ic_contact"
        android:id="@+id/ButtonFloatingContacts"
-android:contentDescription="Contacts"
+android:contentDescription="@string/contacts"
 
       />
 
