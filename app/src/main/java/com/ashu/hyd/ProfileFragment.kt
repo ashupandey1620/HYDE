@@ -54,7 +54,7 @@ private lateinit var userID: String
 private lateinit var image : ByteArray
 private lateinit var storageReference : StorageReference
 
-    val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
+    private val register  = registerForActivityResult(ActivityResultContracts.TakePicturePreview()){
         upload(it)
     }
     override fun onCreateView(
