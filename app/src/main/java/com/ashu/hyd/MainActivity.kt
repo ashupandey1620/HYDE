@@ -44,6 +44,7 @@ class MainActivity : AppCompatActivity() {
             tab,position->
             tab.text = titles[position]
         }.attach()
+   //     contactsButton.setOnClickListener()
 
     }
     class AppPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
