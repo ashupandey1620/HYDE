@@ -30,7 +30,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
                    android:inputType="text"
-                   android:id="@+id/eLoginEmail"
+                   android:id="@+id/LoginEmailTIET"
                    android:textColor="@color/color2"
                    />
            </com.google.android.material.textfield.TextInputLayout>
@@ -52,7 +52,7 @@
                    android:layout_width="match_parent"
                    android:layout_height="match_parent"
                    android:inputType="textEmailAddress"
-                   android:id="@+id/eLoginPassword"
+                   android:id="@+id/LoginPasswordTIET"
                    android:textColor="@color/color2"
                    />
            </com.google.android.material.textfield.TextInputLayout>

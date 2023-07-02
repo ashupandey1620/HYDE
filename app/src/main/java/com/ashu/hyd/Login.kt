@@ -47,8 +47,8 @@ class Login : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_login , container , false)
-        enterEmail    = view.findViewById(R.id.eLoginEmail)
-        enterPassword = view.findViewById(R.id.eLoginPassword)
+        enterEmail    = view.findViewById(R.id.LoginEmailTIET)
+        enterPassword = view.findViewById(R.id.LoginPasswordTIET)
         loginButton   = view.findViewById(R.id.LoginButton)
         googleButton  = view.findViewById(R.id.googleButtonLogin)
         progress      = view.findViewById(R.id.loginProgressBar)
