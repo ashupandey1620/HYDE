@@ -42,6 +42,7 @@
             android:hint="Enter Your Password"
             android:textColorHint="@color/color2"
             app:boxStrokeColor="@color/color2"
+            android:layout_marginTop="15dp"
             app:endIconTint="@color/color2"
             app:endIconMode="clear_text"
             app:startIconTint="@color/color2"
@@ -65,6 +66,7 @@
             android:textColorHint="@color/color2"
             app:boxStrokeColor="@color/color2"
             app:endIconTint="@color/color2"
+            android:layout_marginTop="15dp"
             app:endIconMode="clear_text"
             app:startIconTint="@color/color2"
             >
