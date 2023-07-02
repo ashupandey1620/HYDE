@@ -13,12 +13,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var contactsButton  : FloatingActionButton
     private lateinit var auth            : FirebaseAuth
     private lateinit var viewPager2      : ViewPager2
     private lateinit var tabLayout       : TabLayout
@@ -29,6 +31,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         toolbar       =  findViewById(R.id.toolbarMain)
         auth          =  FirebaseAuth.getInstance()
         viewPager2    =  findViewById(R.id.viewPager2Main)
