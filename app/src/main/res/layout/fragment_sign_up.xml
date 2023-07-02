@@ -15,8 +15,9 @@
         >
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:id="@+id/SignUpEmail"
+            android:id="@+id/EnterEmail"
             android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="@string/enter_email"
             android:textColorHint="@color/color2"
             app:boxStrokeColor="@color/color2"
@@ -27,59 +28,59 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"
-                android:id="@+id/eSignUpEmail"
+                android:inputType="text"
+                android:id="@+id/EnterEmailTIET"
                 android:textColor="@color/color2"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:id="@+id/SignInPassword"
+            android:id="@+id/EnterYourPassword"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_your_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Enter Your Password"
             android:textColorHint="@color/color2"
-            android:layout_below="@+id/loginEmail"
             app:boxStrokeColor="@color/color2"
-            android:layout_marginTop="15dp"
             app:endIconTint="@color/color2"
-            app:endIconMode="password_toggle"
+            app:endIconMode="clear_text"
             app:startIconTint="@color/color2"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textEmailAddress"
-                android:id="@+id/eSignUpPassword"
+                android:inputType="text"
+                android:id="@+id/EnterYourPasswordTIET"
                 android:textColor="@color/color2"
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:id="@+id/SignInConfirmPassword"
+            android:id="@+id/ConfirmYourPassword"
             android:layout_height="wrap_content"
-            android:hint="@string/confirm_your_password"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:hint="Confirm Your Password"
             android:textColorHint="@color/color2"
-            android:layout_below="@+id/SignUpPassword"
             app:boxStrokeColor="@color/color2"
-            android:layout_marginTop="15dp"
             app:endIconTint="@color/color2"
-            app:endIconMode="password_toggle"
+            app:endIconMode="clear_text"
             app:startIconTint="@color/color2"
             >
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textEmailAddress"
-                android:id="@+id/eSignUpConfirmPassword"
+                android:inputType="text"
+                android:id="@+id/ConfirmYourPasswordTIET"
                 android:textColor="@color/color2"
                 />
         </com.google.android.material.textfield.TextInputLayout>
+
+
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/SignInConfirmPassword"
             android:layout_marginTop="15dp"
             android:id="@+id/SignUpButton"
             android:text="@string/sign_up"
