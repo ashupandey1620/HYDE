@@ -103,6 +103,7 @@ private lateinit var storageReference : StorageReference
                 nameVisible.text = value?.getString("userName")
                 emailVisible.text = value?.getString("userEmail")
                 statusVisible.text = value?.getString("userStatus")
+                Picasso.get
             }
         }
 
