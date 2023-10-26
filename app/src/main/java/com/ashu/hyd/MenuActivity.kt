@@ -31,7 +31,7 @@ class MenuActivity : AppCompatActivity() {
                     toolbarMenu.title = "About"
                 }
                 "contact"->{
-                    supportFragmentManager.beginTransaction().replace(R.id.frameLayout,AboutFragment()).commit()
+                    supportFragmentManager.beginTransaction().replace(R.id.frameLayout,ContactFragment()).commit()
                     toolbarMenu.title = "Contact"
                 }
             }
