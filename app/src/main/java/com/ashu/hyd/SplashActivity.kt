@@ -13,7 +13,7 @@ import com.ashu.hyd.R.id.splashGif
 
 class SplashActivity : AppCompatActivity() {
 
-    private val splashScreenTime = 4000
+    private val splashScreenTime = 2000
     private lateinit var imageGif : ImageView
     private lateinit var topAnimation : Animation
 
