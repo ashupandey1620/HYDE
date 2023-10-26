@@ -9,7 +9,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/imgProfileImage"
+        android:id="@+id/imgProfile"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:src="@drawable/user3"
         app:civ_border_color="#FF000000"
