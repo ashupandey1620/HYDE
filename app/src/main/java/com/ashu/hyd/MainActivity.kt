@@ -44,7 +44,11 @@ class MainActivity : AppCompatActivity() {
             tab,position->
             tab.text = titles[position]
         }.attach()
-   //     contactsButton.setOnClickListener()
+        contactsButton.setOnClickListener {
+            val intent = Intent(this,MenuActivity::class.java)
+            intent.putExtra("option","contact")
+            startActivity(intent)
+        }
 
     }
     class AppPagerAdapter(fragmentActivity: FragmentActivity):FragmentStateAdapter(fragmentActivity){
