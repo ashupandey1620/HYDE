@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentEnd="false"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/sender_bg_msg"
         tools:ignore="UselessParent"
         >
         <TextView
@@ -26,9 +27,10 @@
             android:layout_height="wrap_content"
             android:text="@string/timestamp"
             android:textStyle="normal"
-            android:textSize="8sp"
+            android:textSize="12sp"
             android:padding="5dp"
-            android:layout_margin="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             />
 
 

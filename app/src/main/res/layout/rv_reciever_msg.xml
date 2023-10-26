@@ -9,7 +9,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_alignParentEnd="true"
+        android:background="@drawable/reciever_bg_msg"
+        android:layout_alignParentEnd="false"
         tools:ignore="UselessParent"
         >
         <TextView
@@ -18,12 +19,14 @@
             android:text="@string/recievers_msg"
             android:textStyle="normal"
             android:textSize="18sp"
+            android:textColor="@color/white"
+            android:layout_marginStart="25dp"
             android:padding="5dp"
-            android:layout_margin="5dp"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/white"
             android:text="@string/timestamp"
             android:textStyle="normal"
             android:textSize="8sp"
