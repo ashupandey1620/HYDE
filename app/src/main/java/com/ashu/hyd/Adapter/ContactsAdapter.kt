@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.ashu.hyd.R
 import com.ashu.hyd.User
+import com.squareup.picasso.Picasso
 
 
 class ContactsAdapter(val context: Context , val contactList :ArrayList<User>)
@@ -34,6 +35,7 @@ class ContactsAdapter(val context: Context , val contactList :ArrayList<User>)
     override fun onBindViewHolder(holder: ContactsViewHolder , position: Int) {
     val list = contactList[position]
         holder.contactListName.text  = list.profileName
-
+        holder.contactListStatus.text = list.profileStatus
+        Picasso.get().load(list.profilePicture).into(holder.image)
     }
 }
