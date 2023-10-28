@@ -33,6 +33,8 @@ class MessagingFragment : Fragment() {
 
     private lateinit var userId : String
 
+    private val messageInfo = arrayListOf<MessageModal>()
+
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
@@ -62,9 +64,24 @@ class MessagingFragment : Fragment() {
                     for(doc in list)
                     {
                         db = fstore.collection("chats").document(doc.id).collection("message").document()
-                        fstore.collection("chats").document(doc.id).collection("message").addSnapshotListener(
+                        fstore.collection("chats").document(doc.id).collection("message").addSnapshotListener { snapshot , exception ->
 
-                        )
+                            if (snapshot!=null)
+                            {
+                                if (!snapshot.isEmpty)
+                                {
+                                    messageInfo.clear()
+                                    val list = snapshot.documents
+                                    for(document in list)
+                                    {
+                                        val obj = MessageModal(document.getString("messageSender").toString(),document.getString("message").toString(),document.getString("messageTime").toString())
+
+                                    }
+                                }
+                            }
+
+
+                        }
 
                     }
 
