@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -74,7 +75,17 @@ class MessagingFragment : Fragment() {
                                     val list = snapshot.documents
                                     for(document in list)
                                     {
-                                        val obj = MessageModal(document.getString("messageSender").toString(),document.getString("message").toString(),document.getString("messageTime").toString())
+                                        val obj = MessageModal(document.getString("messageSender").toString(),
+                                            document.getString("message").toString() ,
+                                            document.getString("messageTime").toString())
+
+                                        messageInfo.add(obj)
+                                        messageAdapter = MessageAdapter(context,messageInfo)
+                                        msgRecyclerView.adapter = messageAdapter
+                                        msgRecyclerView.layoutManager = messageLayoutManager
+                                        msgRecyclerView.addItemDecoration(DividerItemDecoration(msgRecyclerView.context,(messageLayoutManager as LinearLayoutManager).orientation))
+                                        msgRecyclerView.adapter!!.notifyDataSetChanged()
+
 
                                     }
                                 }
