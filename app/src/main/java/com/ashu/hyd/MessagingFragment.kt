@@ -1,5 +1,6 @@
 package com.ashu.hyd
 
+import android.app.Activity
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -11,10 +12,12 @@ import android.widget.EditText
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ashu.hyd.Adapter.MessageAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentReference
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.Query
 import java.util.Calendar
 
 
@@ -25,17 +28,11 @@ class MessagingFragment : Fragment() {
     private  lateinit var sendMessageButton :FloatingActionButton
     private lateinit var fauth : FirebaseAuth
     private lateinit var fstore : FirebaseFirestore
-
     private lateinit var messageLayoutManager : RecyclerView.LayoutManager
     private lateinit var messageAdapter : MessageAdapter
-
-
     private lateinit var db : DocumentReference
-
     private lateinit var userId : String
-
     private val messageInfo = arrayListOf<MessageModal>()
-
     override fun onCreateView(
         inflater: LayoutInflater , container: ViewGroup? ,
         savedInstanceState: Bundle?
@@ -51,8 +48,6 @@ class MessagingFragment : Fragment() {
         sendMsgEditText = view.findViewById(R.id.editSendMessage)
         messageLayoutManager = LinearLayoutManager(context)
 
-
-
         fstore.collection("chats").whereArrayContains("uids",userId).addSnapshotListener{snapshot,exception->
             if(exception!=null)
             {
@@ -65,8 +60,9 @@ class MessagingFragment : Fragment() {
                     for(doc in list)
                     {
                         db = fstore.collection("chats").document(doc.id).collection("message").document()
-                        fstore.collection("chats").document(doc.id).collection("message").addSnapshotListener { snapshot , exception ->
-
+                        fstore.collection("chats").document(doc.id).collection("message")
+                            .orderBy("id", Query.Direction.ASCENDING)
+                            .addSnapshotListener {snapshot,exception->
                             if (snapshot!=null)
                             {
                                 if (!snapshot.isEmpty)
@@ -80,10 +76,10 @@ class MessagingFragment : Fragment() {
                                             document.getString("messageTime").toString())
 
                                         messageInfo.add(obj)
-                                        messageAdapter = MessageAdapter(context,messageInfo)
+                                        messageAdapter = MessageAdapter(context as Activity,messageInfo)
                                         msgRecyclerView.adapter = messageAdapter
                                         msgRecyclerView.layoutManager = messageLayoutManager
-                                        msgRecyclerView.addItemDecoration(DividerItemDecoration(msgRecyclerView.context,(messageLayoutManager as LinearLayoutManager).orientation))
+                                        msgRecyclerView.scrollToPosition(list.size-1)
                                         msgRecyclerView.adapter!!.notifyDataSetChanged()
 
 
@@ -125,13 +121,14 @@ class MessagingFragment : Fragment() {
             val minute =  c.get(Calendar.MINUTE)
             val timeStamp = "$hour:$minute"
 
-            val messageObject = mutableMapOf<String,String>().also {
+            val messageObject = mutableMapOf<String,Any>().also {
                 it["message"] = message
+                it["messageId"] = 1
                 it["messageSender"] = userId
-                it["messageReceiver"] = ""
+         //       it["messageReceiver"] = "fdsgdvdfsdfsdgsdsdfgsdg"
                 it["messageTime"] = timeStamp
             }
-         db.set(messageObject).addOnSuccessListener {
+            db.set(messageObject).addOnSuccessListener {
              Log.d("OnSuccess","Successfully Send Message")
          }
         }
