@@ -47,7 +47,7 @@ class ContactFragment : Fragment() {
                     }
                     else
                     {
-                        val contact = User(i.getString("userName").toString(),
+                        val contact = User(i.id,i.getString("userName").toString(),
                             i.getString("userStatus").toString(),
                             i.getString("userEmail").toString(),
                             i.getString("userProfilePhoto").toString())
@@ -61,11 +61,6 @@ class ContactFragment : Fragment() {
                 }
             }
         }
-
-
-
-
-
         contactsRecyclerView.addItemDecoration(DividerItemDecoration(contactsRecyclerView.context,(contactsLayoutManager as LinearLayoutManager).orientation))
 
         return view

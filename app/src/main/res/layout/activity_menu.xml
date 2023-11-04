@@ -13,11 +13,21 @@
         android:id="@+id/toolbarMenu"
         android:background="@color/light_cyan"
         />
-<FrameLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:visibility="gone"
+        />
+
+    <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:id="@+id/frameLayout"
     android:layout_gravity="start"
+        android:visibility="gone"
     />
 
 </LinearLayout>
